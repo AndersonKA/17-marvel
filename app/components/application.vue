@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="app">
-    <div class="nav">Marvel</div>
+    <div class="nav">
+      <span class="logo">Marvel</span>
+      <span><input type="search" placeholder="search..." class="nav-form"></span>
+    </div>
       <div class="section">
         <div class="container">
           <div class="stuff">
@@ -65,7 +68,7 @@
                     <span class="comics__item--number">#1</span>
                   </div>
                   <button class="comics__read">Read More</button>
-                  <div class="comics__popup">lorem</div>
+
                 </div>
               </div>
 
@@ -77,6 +80,7 @@
         </div> <!--container-->
       </div> <!--section-->
   </div> <!--app-->
+  <div class="comics__popup">lorem</div>
 </template>
 
 <script>
