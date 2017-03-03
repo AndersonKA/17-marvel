@@ -3,7 +3,7 @@
     <div class="nav">Marvel</div>
       <div class="section">
         <div class="container">
-
+          <div class="stuff">
           <aside class="leftside">
             <div class="leftside__pic">
               <img src="http://www.beaconsinn.com/images/www.onthespot.co.uk/wp-content/uploads/2015/08/cute-dog-pictures-for-kids.jpg" alt="" class="leftside__pic--image">
@@ -28,6 +28,28 @@
                   </div>
                   <div class="characters__item--name">Red Hulk</div>
                 </div>
+
+                <div class="characters__item">
+                  <div class="characters__item--pic">
+                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
+                  </div>
+                  <div class="characters__item--name">Red Hulk</div>
+                </div>
+
+                <div class="characters__item">
+                  <div class="characters__item--pic">
+                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
+                  </div>
+                  <div class="characters__item--name">Red Hulk</div>
+                </div>
+
+                <div class="characters__item">
+                  <div class="characters__item--pic">
+                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
+                  </div>
+                  <div class="characters__item--name">Red Hulk</div>
+                </div>
+
               </div>
 
             <div class="comics__words">Comics</div>
@@ -42,6 +64,8 @@
                     <span class="comics__item--date">(2010)</span>
                     <span class="comics__item--number">#1</span>
                   </div>
+                  <button class="comics__read">Read More</button>
+                  <div class="comics__popup">lorem</div>
                 </div>
               </div>
 
@@ -49,7 +73,7 @@
             </div>
 
 
-
+          </div>
         </div> <!--container-->
       </div> <!--section-->
   </div> <!--app-->

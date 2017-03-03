@@ -21,8 +21,6 @@ $m-brand-border-radius: 0.4rem;
 $b-brand-border: 1px solid #000;
 @import 'box-sizing';
 @import 'resets';
-@import url( 'https://fonts.googleapis.com/css?family=Maven+Pro');
-@import url( 'https://fonts.googleapis.com/css?family=Special+Elite');
 
 .nav {
   padding: 2rem;
@@ -40,6 +38,10 @@ $b-brand-border: 1px solid #000;
   width: 100%;
   max-width: 65rem;
   margin: 0 auto;
+}
+
+.stuff {
+  display: flex;
 }
 
 .leftside {
@@ -61,24 +63,12 @@ $b-brand-border: 1px solid #000;
   }
 }
 
-// .rectangle {
-//        width: 12rem;
-//        height: 12rem;
-//        overflow:hidden;
-//    }
-//
-//    .rectangle__pic {
-//      width:auto;
-//      height: 100%;
-//    }
-
-
 .rightside {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 1rem;
 }
 
 .characters {
+  display: flex;
 
   &__words {
     border-bottom: 0.05rem solid $c-black;
@@ -97,12 +87,33 @@ $b-brand-border: 1px solid #000;
   }
 }
 
-.comics__words {
-  border-bottom: 0.05rem solid $c-black;
-  font-family: $c-brand-font-special;
-  font-size: 2rem;
-}
+.comics {
+  flex-basis: calc(100% / 4 - 1rem - 1rem);
+  flex-grow: 1;
+  margin: 1rem;
 
-.comics__item--image {
-  max-width: 10rem;
+  &__words {
+    border-bottom: 0.05rem solid $c-black;
+    font-family: $c-brand-font-special;
+    font-size: 2rem;
+  }
+
+  &__item--image {
+    max-width: 10rem;
+  }
+
+  &__item--number {
+    padding: 1rem 0;
+  }
+
+  &__read {
+    margin: 0.5rem 0;
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 5%;
+    outline: none;
+    background: $c-brand-navy;
+    color: $c-brand-white;
+    text-decoration: none;
+  }
 }
