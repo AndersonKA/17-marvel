@@ -1,3 +1,16 @@
+import { combineReducers } from 'redux';
+import series from './reducer/series-info';
+import characters from './reducer/character-data';
+import comics from './reducer/series-data';
+import modal from './reducer/modal';
+
+export default combineReducers({
+  series,
+  characters,
+  comics,
+  modal
+});
+
 // export default function reducer(state, action) {
 //   switch (action.type) {
 //     // Replace old series info
@@ -19,10 +32,3 @@
 //       return state || { contacts: [] };
 //   }
 // }
-
-import { combineReducers } from 'redux';
-import tasks from './reducer/tasks';
-
-export default combineReducers({
-  tasks,
-});
