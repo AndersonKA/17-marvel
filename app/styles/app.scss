@@ -3,12 +3,13 @@
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
-@import 'box-sizing';
-
-
 $c-brand-navy: #2c3e50;
 $c-brand-white: #ecf0f1;
 $c-brand-dark-gray: #3b3b3b;
+$c-black: #000;
+$c-jamaica1: #d5a0ee;
+$c-jamaica2: #1160b3;
+$c-jamaica3: #bcfb1a;
 $c-brand-font-reg: 'Maven Pro', sans-serif;
 $c-brand-font-special: 'Special Elite', sans-serif;
 $c-brand-modal-bg: rgba(0, 0, 0, 0.8);
@@ -18,6 +19,90 @@ $m-container-width: 60rem;
 $m-brand-border-radius: 0.4rem;
 
 $b-brand-border: 1px solid #000;
+@import 'box-sizing';
+@import 'resets';
+@import url( 'https://fonts.googleapis.com/css?family=Maven+Pro');
+@import url( 'https://fonts.googleapis.com/css?family=Special+Elite');
 
-// https://fonts.google.com/specimen/Maven+Pro
-// https://fonts.google.com/specimen/Special+Elite
+.nav {
+  padding: 2rem;
+  background: $c-brand-navy;
+  color: $c-brand-white;
+  font-family: $c-brand-font-special;
+  font-size: 2rem;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.leftside {
+  max-width: 20rem;
+
+  &__pic {
+    max-width: 20rem;
+  }
+
+  &__title {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  &__creator--heading {
+    border-bottom: 0.05rem solid $c-black;
+    font-family: $c-brand-font-special;
+    font-size: 1.5rem;
+  }
+}
+
+// .rectangle {
+//        width: 12rem;
+//        height: 12rem;
+//        overflow:hidden;
+//    }
+//
+//    .rectangle__pic {
+//      width:auto;
+//      height: 100%;
+//    }
+
+
+.rightside {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characters {
+
+  &__words {
+    border-bottom: 0.05rem solid $c-black;
+    font-family: $c-brand-font-special;
+    font-size: 2rem;
+  }
+
+  &__item {
+    flex-basis: calc(100% / 4 - 1rem - 1rem);
+    flex-grow: 1;
+    margin: 1rem;
+
+    &--pic {
+      max-width: 10rem;
+    }
+  }
+}
+
+.comics__words {
+  border-bottom: 0.05rem solid $c-black;
+  font-family: $c-brand-font-special;
+  font-size: 2rem;
+}
+
+.comics__item--image {
+  max-width: 10rem;
+}

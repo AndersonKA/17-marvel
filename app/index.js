@@ -1,8 +1,8 @@
 import 'whatwg-fetch';
 
-// import Vue from 'vue';
-import app from './components/application.vue';
+import Vue from 'vue';
+import App from './components/application.vue';
 
-// const app = new Vue(App);
+const app = new Vue(App);
 
 app.$mount('.app');
