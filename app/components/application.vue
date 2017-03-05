@@ -84,9 +84,14 @@
 </template>
 
 <script>
+import store from '../store';
+import { seriesInfoSearch } from '../actions';
 export default {
   data() {
-    return {};
+    return {
+      series: this.$select('series'),
+      characters
+    };
   },
 
   methods: {
