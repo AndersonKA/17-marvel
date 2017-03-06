@@ -116,4 +116,8 @@ $b-brand-border: 1px solid #000;
     color: $c-brand-white;
     text-decoration: none;
   }
+
+  &__popup {
+    position: fixed;
+  }
 }

@@ -16,7 +16,7 @@ export function modalClear(modalDown) {
 
 export function seriesInfoSearch() {
   return (next) => {
-    // need to fix link
+    // need to fix link???
     fetch('http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=TITLE&apikey=APIKEY')
       .then(r => r.json())
       .then((data) => {
