@@ -13,10 +13,14 @@
             </div>
             <div class="leftside__title">
               <span class="leftside__title--name">Spider-Girl</span>
-              <span class="leftside__title--date">(2010-2011)</span>
+              <span class="leftside__title--startdate">2010</span>
+              <span class="leftside__title--enddate">2011</span>
             </div>
 
-            <div class="leftside__dates">2010 - 2011</div>
+            <div class="leftside__dates">
+              <span class="leftside__dates--start">2010</span>
+              <span class="leftside__dates--end">2011</span>
+            </div>
 
             <h3 class="leftside__creator--heading">Creators</h3>
             <div class="leftside__creator--names">Tom Brennan</div>

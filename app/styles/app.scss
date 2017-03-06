@@ -7,9 +7,7 @@ $c-brand-navy: #2c3e50;
 $c-brand-white: #ecf0f1;
 $c-brand-dark-gray: #3b3b3b;
 $c-black: #000;
-$c-jamaica1: #d5a0ee;
-$c-jamaica2: #1160b3;
-$c-jamaica3: #bcfb1a;
+$c-jamaica1: #1160b3;
 $c-brand-font-reg: 'Maven Pro', sans-serif;
 $c-brand-font-special: 'Special Elite', sans-serif;
 $c-brand-modal-bg: rgba(0, 0, 0, 0.8);
@@ -32,6 +30,10 @@ $b-brand-border: 1px solid #000;
 
 .section {
   padding: 1rem;
+  // margin: auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .container {
