@@ -25,51 +25,12 @@
           <div class="rightside">
             <div class="characters__words">Characters</div>
               <div class="characters">
-                <div class="characters__item">
-                  <div class="characters__item--pic">
-                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
-                  </div>
-                  <div class="characters__item--name">Red Hulk</div>
-                </div>
-
-                <div class="characters__item">
-                  <div class="characters__item--pic">
-                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
-                  </div>
-                  <div class="characters__item--name">Red Hulk</div>
-                </div>
-
-                <div class="characters__item">
-                  <div class="characters__item--pic">
-                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
-                  </div>
-                  <div class="characters__item--name">Red Hulk</div>
-                </div>
-
-                <div class="characters__item">
-                  <div class="characters__item--pic">
-                    <img src="http://cdn2-www.dogtime.com/assets/uploads/2011/03/cute-dog-names.jpg" alt="" class="characters__item--image">
-                  </div>
-                  <div class="characters__item--name">Red Hulk</div>
-                </div>
 
               </div>
 
             <div class="comics__words">Comics</div>
               <div class="comics">
-                <div class="comics__item">
-                  <div class="comics__item--pic">
-                    <img src="http://images.meredith.com/content/dam/bhg/Images/2012/11/28/405944_10150676681556019_1918501130_n.jpg.rendition.largest.ss.jpg" alt="" class="comics__item--image">
-                  </div>
-                  <div class="comics__item--number">#1</div>
-                  <div class="comics__item--name">Spider-Girl</div>
-                  <div class="comics__item--stuff">
-                    <span class="comics__item--date">(2010)</span>
-                    <span class="comics__item--number">#1</span>
-                  </div>
-                  <button class="comics__read">Read More</button>
 
-                </div>
               </div>
 
 
@@ -85,15 +46,22 @@
 
 <script>
 import store from '../store';
-import { seriesInfoSearch } from '../actions';
+// import { seriesInfoSearch } from '../actions';
+// import { comicsItem } from './comic-item.vue';
+// import { charactersItem } from './character-item.vue';
+
 export default {
   data() {
     return {
       series: this.$select('series'),
-      characters
+      characters: this.$select('characters'),
+      comics: this.$select('comics'),
     };
   },
 
+  created() {
+    store.dispatch(seriesInfoSearch());
+  },
   methods: {
 
   },
