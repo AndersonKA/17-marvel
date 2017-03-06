@@ -14,13 +14,30 @@ export function modalClear(modalDown) {
   return { type: 'MODAL@CLEAR', data: modalDown };
 }
 
-export function seriesInfoSearch() {
-  return (next) => {
+export function seriesInfoSearch(id) {
+  return (dispatch) => {
     // need to fix link???
-    fetch('http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=TITLE&apikey=APIKEY')
-      .then(r => r.json())
-      .then((data) => {
-        next(seriesInfoLoadComplete(data));
-      });
+    fetch('http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=TITLE').then(r => r.json()).then((data) => {
+      const series = data.data.results;
+      dispatch(seriesInfoLoadComplete(series));
+    });
+  };
+}
+
+export function charactersInfoSearch(id) {
+  return (dispatch) => {
+    fetch('http://marvel-is-broke.herokuapp.com/series/ID/characters').then(r => r.json()).then((data) => {
+      const characters = data.data.results;
+      dispatch(characterFindForId(characters));
+    });
+  };
+}
+
+export function comicsInfoSearch(id) {
+  return (dispatch) => {
+    fetch('http://marvel-is-broke.herokuapp.com/series/ID/comics').then(r => r.json()).then((data) => {
+      const comics = data.data.results;
+      dispatch(comicsFindForId(comics));
+    });
   };
 }
