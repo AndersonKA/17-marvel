@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="">
+    <!--data.results[1].comics.items  v-for???-->
     <div class="comics__item">
       <div class="comics__item--pic">
         <img src="http://images.meredith.com/content/dam/bhg/Images/2012/11/28/405944_10150676681556019_1918501130_n.jpg.rendition.largest.ss.jpg" alt="" class="comics__item--image">

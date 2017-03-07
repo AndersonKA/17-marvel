@@ -47,7 +47,7 @@ test('when adding modal data replace the old modal description', (assert) => {
 
 test('when clearing modal data set the modal state to null', (assert) => {
   const oldState =  { comics: [], characters: [], seriesData: [], modal: { message: 'readmore' } };
-  const actionOne = { type: 'MODAL@SET', data: null };
+  const actionOne = { type: 'MODAL@CLEAR', data: null };
   const expectedState = { comics: [], characters: [], seriesData: [], modal: null };
   assert.deepEqual(reducer(oldState, actionOne), expectedState);
 });

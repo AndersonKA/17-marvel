@@ -2,29 +2,33 @@
   <div class="app">
     <div class="nav">
       <span class="logo">Marvel</span>
-      <span><input type="search" placeholder="search..." class="nav-form"></span>
+
     </div>
       <div class="section">
         <div class="container">
           <div class="stuff">
+            <!--<left-side v-if="showseriesInfo" class="seriesInfo">-->
           <aside class="leftside">
             <div class="leftside__pic">
               <img src="http://www.beaconsinn.com/images/www.onthespot.co.uk/wp-content/uploads/2015/08/cute-dog-pictures-for-kids.jpg" alt="" class="leftside__pic--image">
             </div>
             <div class="leftside__title">
-              <span class="leftside__title--name">Spider-Girl</span>
-              <span class="leftside__title--startdate">2010</span>
-              <span class="leftside__title--enddate">2011</span>
+              <!--data.results[0].title-->
+              <span class="leftside__title--name">Spider-Girl (2010 - 2011)</span>
             </div>
 
             <div class="leftside__dates">
+              <!--data.results[1].startYear-->
               <span class="leftside__dates--start">2010</span>
+              <!--data.results[1].endYear-->
               <span class="leftside__dates--end">2011</span>
             </div>
 
             <h3 class="leftside__creator--heading">Creators</h3>
+            <!--data.results[1].creators.items  v-for???-->
             <div class="leftside__creator--names">Tom Brennan</div>
           </aside> <!--end of left-side-->
+          </left-side>
 
           <div class="rightside">
             <div class="characters__words">Characters</div>
@@ -58,9 +62,9 @@ import { charactersItem } from './character-item.vue';
 export default {
   data() {
     return {
-      series: this.$select('series'),
-      characters: this.$select('characters'),
-      comics: this.$select('comics'),
+      series: this.$select('seriesInfo'),
+      characters: this.$select('character'),
+      comics: this.$select('comic'),
     };
   },
 
