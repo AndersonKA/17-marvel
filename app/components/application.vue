@@ -7,14 +7,14 @@
       <div class="section">
         <div class="container">
           <div class="stuff">
-            <left-side v-if="showseriesInfo" class="seriesInfo">
+            <left-side v-if="seriesData" class="seriesInfo">
           <aside class="leftside">
             <div class="leftside__pic">
-              <img src="http://www.beaconsinn.com/images/www.onthespot.co.uk/wp-content/uploads/2015/08/cute-dog-pictures-for-kids.jpg" alt="" class="leftside__pic--image">
+              <img :src="`${seriesData.thumbnail.path}.${seriesData.thumbnail.extension}`" alt="" class="leftside__pic--image">
             </div>
             <div class="leftside__title">
               <!--{{data.results[0].title}}-->
-              <span class="leftside__title--name">Spider-Girl (2010 - 2011)</span>
+              <span class="leftside__title--name">{{ seriesData.title }}</span>
             </div>
 
             <div class="leftside__dates">
@@ -55,34 +55,20 @@
 
 <script>
 import store from '../store';
-import seriesInfoSearch from '../actions';
-import comicItem from './comic-item.vue';
-import characterItem from './character-item.vue';
+import { seriesInfoSearch } from '../actions';
+import { comicsItem } from './comic-item.vue';
+import { charactersItem } from './character-item.vue';
 
 export default {
-  components: {
-  characterItem: Character,
-  comicItem: Comic,
-  SeriesInfo,
-},
-
   data() {
     return {
-      series: this.$select('seriesInfo'),
-      characters: this.$select('characterInfo'),
-      comics: this.$select('comicInfo'),
+      seriesData: this.$select('seriesData'),
+      characterData: this.$select('characterInfo'),
+      comicData: this.$select('comicInfo'),
     };
   },
 
   created() {
-    store.subscribe(() => {
-      const {characters, comics, seriesData, moreInfo} = store.getState();
-
-      this.characters = characters;
-      this.comics= comics;
-      this.seriesData = seriesData;
-      this.moreInfo = moreInfo;
-    });
     store.dispatch(seriesInfoSearch('Hulk'));
   },
   methods: {
