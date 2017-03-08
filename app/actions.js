@@ -4,13 +4,13 @@ export function seriesInfoLoadComplete(data) {
     data,
   };
 }
-export function charactersFindForId(data) {
+export function charactersFindAllComplete(data) {
   return {
     type: 'CHARACTERS@FIND_ALL_COMPLETE',
     data,
   };
 }
-export function comicsFindForId(data) {
+export function comicsFindAllComplete(data) {
   return {
     type: 'COMICS@FIND_ALL_COMPLETE',
     data, };
@@ -33,8 +33,8 @@ export function seriesInfoSearch(name) {
     .then((data) => {
       const series = data.data.results[0];
       dispatch(seriesInfoLoadComplete(series));
-      dispatch(charactersFindForId(series.id));
-      dispatch(comicsFindForId(series.id));
+      dispatch(charactersInfoSearch(series.id));
+      dispatch(comicsInfoSearch(series.id));
     });
   };
 }

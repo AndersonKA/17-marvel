@@ -3,7 +3,7 @@ export default function modal(state = null, action) {
     case 'MODAL@SET':
       return action.data;
     case 'MODAL@CLEAR':
-      return action.data;
+      return null;
     default:
       return state;
   }
