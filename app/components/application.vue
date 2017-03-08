@@ -35,7 +35,9 @@
             </div>
 
             <div class="comics__words">Comics</div>
-            <div class="comics"></div>
+            <div class="comics">
+              <comic-item v-for="item in comics" v-bind:comic="item"></comic-item>
+            </div>
           </div>
         </div>
       </div><!--container-->
@@ -51,12 +53,13 @@
   import store from '../store';
   import { seriesInfoSearch } from '../actions';
   import CharacterItem from './character-item.vue';
-  import { comicsItem } from './comic-item.vue';
+  import ComicItem from './comic-item.vue';
 
 
   export default {
     components: {
-      CharacterItem
+      CharacterItem,
+      ComicItem
     },
 
     data() {
