@@ -13,20 +13,17 @@
               <img :src="`${seriesData.thumbnail.path}.${seriesData.thumbnail.extension}`" alt="" class="leftside__pic--image">
             </div>
             <div class="leftside__title">
-              <!--{{data.results[0].title}}-->
               <span class="leftside__title--name">{{ seriesData.title }}</span>
             </div>
 
             <div class="leftside__dates">
-              <!--data.results[1].startYear-->
-              <span class="leftside__dates--start">2010</span>
-              <!--data.results[1].endYear-->
-              <span class="leftside__dates--end">2011</span>
+              <span class="leftside__dates--start">{{ seriesData.startYear }}-</span>
+              <span class="leftside__dates--end">{{ seriesData.endYear }}</span>
             </div>
 
             <h3 class="leftside__creator--heading">Creators</h3>
-            <!--data.results[1].creators.items  v-for???-->
-            <div class="leftside__creator--names">Tom Brennan</div>
+              <!--<song-item v-for="item in tracks" v-bind:track="item"></song-item>-->
+            <div class="leftside__creator--names">{{ seriesData.creators.items[0].name }}</div>
           </aside> <!--end of left-side-->
           </left-side>
 
@@ -63,13 +60,13 @@ export default {
   data() {
     return {
       seriesData: this.$select('seriesData'),
-      characterData: this.$select('characterInfo'),
-      comicData: this.$select('comicInfo'),
+      characterData: this.$select('characterData'),
+      comicData: this.$select('comicData'),
     };
   },
 
   created() {
-    store.dispatch(seriesInfoSearch('Hulk'));
+    store.dispatch(seriesInfoSearch('Spider-girl'));
   },
   methods: {
 

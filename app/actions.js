@@ -22,8 +22,7 @@ export function characterFindForId(data) {
 
 export function seriesInfoSearch(name) {
   return (dispatch) => {
-    // need to fix link???
-    fetch('http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}')
+    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(r => r.json())
     .then((data) => {
       const series = data.data.results[0];
@@ -36,7 +35,7 @@ export function seriesInfoSearch(name) {
 
 export function charactersInfoSearch(id) {
   return (dispatch) => {
-    fetch('http://marvel-is-broke.herokuapp.com/series/${id}/characters')
+    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/characters`)
     .then(r => r.json())
     .then((data) => {
       const characters = data.data.results;
@@ -47,7 +46,7 @@ export function charactersInfoSearch(id) {
 
 export function comicsInfoSearch(id) {
   return (dispatch) => {
-    fetch('http://marvel-is-broke.herokuapp.com/series/${id}/comics')
+    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/comics`)
     .then(r => r.json())
     .then((data) => {
       const comics = data.data.results;
