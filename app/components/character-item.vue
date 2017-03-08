@@ -3,7 +3,7 @@
 
     <div class="characters__item">
       <div class="characters__item--pic">
-        <!--<img :src="`$seriesData.thumbnail.path`" alt="" class="characters__item--image">-->
+        <!--<img :src="`{$character.thumbnail.path}.${character.thumnail.extension}`" alt="" class="characters__item--image">-->
       </div>
       <div class="characters__item--name">{{ characterData.characters[0].items }}</div>
     </div>

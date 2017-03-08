@@ -10,14 +10,14 @@
             <left-side v-if="seriesData" class="seriesInfo">
           <aside class="leftside">
             <div class="leftside__pic">
-              <img :src="`${seriesData.thumbnail.path}.${seriesData.thumbnail.extension}`" alt="" class="leftside__pic--image">
+              <div class="leftside--pic"><img :src="`${seriesData.thumbnail.path}.${seriesData.thumbnail.extension}`" alt="" class="leftside__pic--image"></div>
             </div>
             <div class="leftside__title">
               <span class="leftside__title--name">{{ seriesData.title }}</span>
             </div>
 
             <div class="leftside__dates">
-              <span class="leftside__dates--start">{{ seriesData.startYear }}-</span>
+              <span class="leftside__dates--start">{{ seriesData.startYear }} -</span>
               <span class="leftside__dates--end">{{ seriesData.endYear }}</span>
             </div>
 
@@ -65,7 +65,7 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
     store.dispatch(seriesInfoSearch('Spider-girl'));
   },
   methods: {

@@ -30,10 +30,6 @@ $b-brand-border: 1px solid #000;
 
 .section {
   padding: 1rem;
-  // margin: auto;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 }
 
 .container {
@@ -50,7 +46,23 @@ $b-brand-border: 1px solid #000;
   max-width: 20rem;
 
   &__pic {
-    max-width: 20rem;
+    position: relative;
+    width: 50%;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+
+  &--pic {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 
   &__title {
@@ -84,11 +96,11 @@ $b-brand-border: 1px solid #000;
     flex-grow: 1;
     margin: 1rem;
 
-    &--pic {
-      max-width: 10rem;
-    }
   }
 }
+
+
+
 
 .comics {
   flex-basis: calc(100% / 4 - 1rem - 1rem);

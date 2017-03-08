@@ -4,21 +4,27 @@ export function seriesInfoLoadComplete(data) {
     data,
   };
 }
-export function characterFindForId(data) {
+export function charactersFindForId(data) {
   return {
     type: 'CHARACTERS@FIND_ALL_COMPLETE',
     data,
   };
 }
-// export function comicsFindForId(findComics) {
-//   return { type: 'COMICS@FIND_ALL_COMPLETE', data: findComics };
-// }
-// export function modalSet(modalUp) {
-//   return { type: 'MODAL@SET', data: modalUp };
-// }
-// export function modalClear(modalDown) {
-//   return { type: 'MODAL@CLEAR', data: modalDown };
-// }
+export function comicsFindForId(data) {
+  return {
+    type: 'COMICS@FIND_ALL_COMPLETE',
+    data, };
+}
+export function modalSet(data) {
+  return {
+    type: 'MODAL@SET',
+    data, };
+}
+export function modalClear(data) {
+  return {
+    type: 'MODAL@CLEAR',
+    data, };
+}
 
 export function seriesInfoSearch(name) {
   return (dispatch) => {
@@ -50,7 +56,7 @@ export function comicsInfoSearch(id) {
     .then(r => r.json())
     .then((data) => {
       const comics = data.data.results;
-      // dispatch(comicsFindForId(comics));
+      dispatch(comicsFindAllComplete(comics));
     });
   };
 }
