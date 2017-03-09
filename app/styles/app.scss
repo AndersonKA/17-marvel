@@ -46,14 +46,14 @@ $b-brand-border: 1px solid #000;
 }
 
 .leftside {
-  max-width: 20rem;
+  flex-basis: 25%;
 
   &__pic {
     position: relative;
     width: 100%;
     overflow: hidden;
 
-    &:before {
+    &::before {
       display: block;
       padding-top: 100%;
       content: '';
@@ -73,23 +73,25 @@ $b-brand-border: 1px solid #000;
 
   &__title {
     padding: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   &__creator--heading {
     border-bottom: 0.05rem solid $c-black;
     font-family: $c-brand-font-special;
     font-size: 1.5rem;
-
   }
 }
 
 .rightside {
+  flex-basis: 75%;
   margin: 0 1rem;
+  padding: 0 1rem;
 }
 
 .characters {
   display: flex;
+  margin: -1rem;
 
   &__words {
     border-bottom: 0.05rem solid $c-black;
@@ -100,14 +102,69 @@ $b-brand-border: 1px solid #000;
   &__item {
     flex-basis: calc(100% / 4 - 1rem - 1rem);
     flex-grow: 1;
-    margin: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
 
     &--pic {
       position: relative;
       width: 100%;
       overflow: hidden;
 
-      &:before {
+      &::before {
+        display: block;
+        padding-top: 100%;
+        content: '';
+      }
+    }
+
+    &--image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--name {
+      margin: 1rem 0;
+    }
+  }
+}
+
+.comics {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+
+  &__words {
+    border-bottom: 0.05rem solid $c-black;
+    font-family: $c-brand-font-special;
+    font-size: 2rem;
+  }
+
+  &__item {
+    flex-basis: calc(100% / 4 - 2rem);
+    flex-grow: 1;
+    margin: 1rem 0;
+    padding: 1rem;
+
+    &--number {
+      margin: 1rem 0;
+    }
+
+    &--name {
+      margin-bottom: 1rem;
+    }
+
+    &--pic {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      &::before {
         display: block;
         padding-top: 100%;
         content: '';
@@ -125,40 +182,33 @@ $b-brand-border: 1px solid #000;
       object-fit: cover;
     }
   }
-}
-
-.comics {
-  flex-basis: calc(100% / 4 - 1rem - 1rem);
-  flex-grow: 1;
-  margin: 1rem;
-
-  &__words {
-    margin: 1rem 0;
-    border-bottom: 0.05rem solid $c-black;
-    font-family: $c-brand-font-special;
-    font-size: 2rem;
-  }
-
-  &__item--image {
-    max-width: 10rem;
-  }
-
-  &__item--number {
-    padding: 1rem 0;
-  }
 
   &__read {
-    margin: 0.5rem 0;
+    width: 100%;
     padding: 0.5rem;
-    border: 0;
+    border-style: none;
     border-radius: 5%;
     outline: none;
     background: $c-brand-navy;
     color: $c-brand-white;
-    text-decoration: none;
   }
+}
 
-  &__popup {
-    position: fixed;
+.modal {
+  display: flex;
+  padding: 2rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+
+
+  &__card {
+    background: #fff;
+    padding: 1rem;
   }
 }

@@ -36,52 +36,54 @@
 
             <div class="comics__words">Comics</div>
             <div class="comics">
-              <comic-item v-for="item in comics" v-bind:comic="item"></comic-item>
+              <comic-item v-for="item in comics" v-bind:comic="item" v-on:readmore="showModal"></comic-item>
             </div>
           </div>
         </div>
       </div><!--container-->
     </div><!--section-->
+    <div class="modal" v-if="modal">
+      <div class="modal__card">
+        <button v-on:click="closeModal" >x</button>
+        <p v-html="modal.description"></p>
+      </div>
+    </div>
   </div> <!--app-->
-  <!--<div class="open_modal" v-if="showModal">
-    <div class="modal">
-    <button v-on:click ???
-  class="comics__popup">lorem</div>-->
 </template>
 
 <script>
-  import store from '../store';
-  import { seriesInfoSearch } from '../actions';
-  import CharacterItem from './character-item.vue';
-  import ComicItem from './comic-item.vue';
+import store from '../store';
+import { seriesInfoSearch, modalSet, modalClear } from '../actions';
+import CharacterItem from './character-item.vue';
+import ComicItem from './comic-item.vue';
 
+export default {
+  components: {
+    CharacterItem,
+    ComicItem
+  },
 
-  export default {
-    components: {
-      CharacterItem,
-      ComicItem
+  data() {
+    return {
+      seriesData: this.$select('seriesData'),
+      characters: this.$select('characters'),
+      comics: this.$select('comics'),
+      modal: this.$select('modal'),
+    };
+  },
+
+  mounted() {
+    store.dispatch(seriesInfoSearch('Captain_America'));
+  },
+
+  methods: {
+    showModal(data) {
+      store.dispatch(modalSet(data));
     },
 
-    data() {
-      return {
-        seriesData: this.$select('seriesData'),
-        characters: this.$select('characters'),
-        comics: this.$select('comics'),
-      };
+    closeModal() {
+      store.dispatch(modalClear());
     },
-
-    mounted() {
-      store.dispatch(seriesInfoSearch('Spider-girl'));
-
-    },
-    methods: {
-      // modal() {
-      // this.showModal = true;
-      // },
-
-      // close() {
-      // this.showModal = false;
-      // },
-    },
-  };
+  },
+};
 </script>
